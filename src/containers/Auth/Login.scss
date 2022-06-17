@@ -1,0 +1,78 @@
+.login-background{
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    display: flex;
+    align-items: center;
+    .login-container{
+        width: 350px;
+        height: 405px;
+        margin: 0 auto;
+        border-radius: 10px;
+        background-color: white;
+        display: flex;
+
+        .login-content{
+            padding: 10px;
+
+            .text-login{
+                text-align: center;
+                font-weight: 600;
+                font-size: 24px;
+                padding-top: 10px;
+            }
+
+            .login-input{
+                margin: 7px 0;
+                .custom-input-password{
+                    position: relative;
+                    i{
+                        position: absolute;
+                        right: 6px;
+                        top: 10px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .btn-login{
+                width: 80%;
+                margin: 10px auto;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                height: 30px;
+                border-radius: 15px;
+                outline: none;
+                border: none;
+                letter-spacing: 2px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+            }
+
+            .forgot-password{
+                font-size: 15px;
+            }
+
+            .social-login{
+                display: flex;
+                justify-content: center;
+                i:nth-child(1), i:nth-child(2){
+                    font-size: 40px;
+                    background: white;
+                    border-radius: 50%;
+                    height: 50px;
+                    width: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: rgb(206, 116, 116);
+                }
+            }
+        }
+    }
+    
+}
