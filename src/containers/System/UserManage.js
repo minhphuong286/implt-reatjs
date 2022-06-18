@@ -42,10 +42,11 @@ class UserManage extends Component {
     handleCreateNewUser = async (data) => {
         try {
             let response = await createUser(data);
+            
             if (response && response.errCode !== 0) {
                 console.log("check Message: ", response)
-                await alert(response.errCode)
-                // alert(response.message)
+                // await alert(response.errCode)
+                alert(response.message)
             } else {
                 this.setState({
                     isOpenUserModal: false,
