@@ -11,9 +11,15 @@ const getAllUsers = (inputId) => {
         id: inputId
     })
 }
+const createUser = (data) => {
+    console.log("CHeckDDDDDDD",data)
+    return axios.post('/api/create-new-user', data)
+}
+
 
 export {
     handleLogin,
-    getAllUsers
+    getAllUsers,
+    createUser,
 }
 // export default handleLogin;

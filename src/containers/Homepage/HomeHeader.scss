@@ -1,0 +1,119 @@
+.home-header-container{
+    height: 60px;
+    width: 100%;
+    padding: 10px 20px;
+    
+    .home-header-content{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        .left-content{
+            width: 25%;
+            display: flex;
+            align-items: center;
+            i{
+                font-size: 25px;
+                color: grey;
+                cursor: pointer;
+            }
+            .lt-logo{
+                background: url("../../assets/logo.svg") center center no-repeat;
+                height: 100%;
+                width: 100%;
+                cursor: pointer;
+            }
+
+        }
+        .center-content{
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .cc-child{
+                .sub-title{
+                    font-weight: 400;
+                    font-size: 12px;
+                }
+            }
+        }
+        .right-content{
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.after-home-header{
+    background-image: url("../../assets/header-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 80vh;
+    .after-home-header-up{
+        padding: 45px;
+        .ahhu-title{
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 1px #5a5050;
+            font-size: 32px;
+            b{
+                font-size: 36px;
+            }
+        }
+        .ahhu-search{
+            background-color: yellow;
+            // width: fit-content;
+            width: 30%;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 10px auto;
+            i{
+                color: black
+            }
+            input{
+                background: transparent;
+                outline: none;
+                border: none;
+                width: 100%;
+                margin-left: 5px;
+            }
+        }
+    }
+    .after-home-header-down{
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            li{
+                text-align: center;
+                .ahhd-child{
+                    text-decoration: none;
+                    i{
+                        font-size: 30px;
+                        padding: 10px;
+                        border-radius: 50%;
+                        background-color: #fff;
+                    }
+                    .sub{
+                        color: black;
+                        font-weight: bold
+                    }
+                }
+                
+            }
+        }
+        
+        
+        
+        
+    }
+}
+
