@@ -4,36 +4,36 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 // import { ModalFooter } from 'reactstrap';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { emitter } from '../../utils/emitter';
+import ld from 'lodash';
 
-class ModalUser extends Component {
+class ModalEditUser extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            id: '',
             email: '',
             password: '',
             firstName: '',
             lastName: '',
             address: ''
         }
-        this.listenToEmitter();
     }
 
-    listenToEmitter() {
-        emitter.on('EVENT_CLEAR_MODEL_DATA', () => {
-            this.setState({
-                email: '',
-                password: '',
-                firstName: '',
-                lastName: '',
-                address: ''
-            })
-        })
 
-    }
     componentDidMount() {
-
+        let user = this.props.handleEditUser;
+        console.log('User received from parent: ', user)
+        if (user && !ld.isEmpty(user)) {
+            // console.log("entered")
+            this.setState({
+                id: user.id,
+                email: user.email,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                address: user.address
+            })
+        }
     }
 
     handleOnChangeInput = (event, id) => {
@@ -44,46 +44,41 @@ class ModalUser extends Component {
         })
     }
     checkValidInputs = () => {
-        let arrIdInputs = ['email', 'password', 'firstName', 'lastName', 'address'];
+        let arrIdInputs = ['email', 'firstName', 'lastName', 'address'];
         for (let i = 0; i < arrIdInputs.length; i++) {
             if (this.state[arrIdInputs[i]] === '') {
-                alert('Missing parameter!' + arrIdInputs[i]);
+                alert('Missing parameter! ' + arrIdInputs[i]);
                 return false;
             }
         }
         return true;
     }
-    handleAdd = () => {
+    handleSave = () => {
         let isValid = this.checkValidInputs();
         if (isValid === true) {
-            this.props.handleCreateNewUser(this.state)
+            this.props.handleSaveAfterEdit(this.state)
         }
     }
+
     render() {
-        let { isOpenUserModal, toggleUserModal, handleCreateNewUser } = this.props;
-        // console.log(this.props)
-        console.log("Check state after modify: ", this.state)
+        let { isOpenEditUserModal, toggleEditUserModal, handleEditUser } = this.props;
+        console.log("Props of child: ", this.props)
+        // console.log("Check state after modify: ", this.state)
         return (
             <Modal
-                isOpen={isOpenUserModal}
-                toggle={toggleUserModal}
+                isOpen={isOpenEditUserModal}
+                toggle={toggleEditUserModal}
                 className={"modal-user-container"}
             >
-                <ModalHeader toggle={toggleUserModal}>Create a new user</ModalHeader>
+                <ModalHeader toggle={toggleEditUserModal}>Edit user</ModalHeader>
                 <ModalBody>
                     <div className='modal-user-body'>
-                        <div className='input-container'>
+                        <div className='input-container full-cover'>
                             <label>Email</label>
                             <input name='email' type='email'
                                 value={this.state.email}
                                 onChange={(event) => { this.handleOnChangeInput(event, 'email') }}
-                            />
-                        </div>
-                        <div className='input-container'>
-                            <label>Password</label>
-                            <input name='password' type='text'
-                                value={this.state.password}
-                                onChange={(event) => { this.handleOnChangeInput(event, 'password') }}
+                                disabled
                             />
                         </div>
                         <div className='input-container'>
@@ -112,8 +107,8 @@ class ModalUser extends Component {
 
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary px-3" onClick={() => { this.handleAdd() }}>Add</Button>{' '}
-                    <Button color="secondary px-3" onClick={toggleUserModal}>Cancel</Button>
+                    <Button color="primary px-3" onClick={() => { this.handleSave() }}>Save changes</Button>{' '}
+                    <Button color="secondary px-3" onClick={toggleEditUserModal}>Cancel</Button>
                 </ModalFooter>
             </Modal>
         )
@@ -131,4 +126,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalUser);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalEditUser);
