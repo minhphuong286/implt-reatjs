@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 
-import HomeHeader from './HomeHeader';
-import Specialty from './section/Specialty';
-class Homepage extends Component {
+import './Specialty.scss';
+
+class Specialty extends Component {
+
+
 
     render() {
+
         return (
             <>
-                <HomeHeader />
-                <Specialty />
+                Specialty
             </>
         )
     }
@@ -18,13 +21,14 @@ class Homepage extends Component {
 
 const mapStateToProps = state => {
     return {
-
+        isLoggedIn: state.user.isLoggedIn,
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
+export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
