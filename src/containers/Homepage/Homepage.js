@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import HomeHeader from './HomeHeader';
 import Specialty from './section/Specialty';
+
 class Homepage extends Component {
 
     render() {
