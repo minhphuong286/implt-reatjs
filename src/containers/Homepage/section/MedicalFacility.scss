@@ -1,0 +1,31 @@
+@import 'sectionShare';
+
+.medical-facility {
+    background-color: #fffdfd !important;
+    .section-share-content{
+        .img1{
+            background-image: url('../../../assets/medicalFacility/093035-benh-vien-thu-cuc-1.jpg');
+        }
+        .img2{
+            background-image: url('../../../assets/medicalFacility/095119-benh-vien-cho-ray-h1.jpg');
+        }
+        .img3{
+            background-image: url('../../../assets/medicalFacility/095412-bv-hung-viet.jpg');
+        }
+        .img4{
+            background-image: url('../../../assets/medicalFacility/101727-anh-sg-toan-dien-ben-ngoai.jpg');
+        }
+        .img5{
+            background-image: url('../../../assets/medicalFacility/112414-pk-dhyd1.jpg');
+        }
+        .img6{
+            background-image: url('../../../assets/medicalFacility/114348-bv-viet-duc.jpg');
+        }
+        .img7{
+            background-image: url('../../../assets/medicalFacility/114446-anh-bia-bvk.jpg');
+        }
+        .img8{
+            background-image: url('../../../assets/medicalFacility/145224-bn-nam-hoc-va-hiem-muon-hn.jpg');
+        }
+    }
+}

@@ -1,0 +1,34 @@
+@import 'sectionShare';
+
+
+.handbook {
+    background-color: #fffdfd !important;
+    .section-share-content{
+        a{
+            display: flex;
+            .img{
+                // width: 90% !important;
+                margin: 0 0;
+            }
+            .img1{
+                background-image: url('../../../assets/handbook/174459-phong-kham-hello-doctor-co-tot-khong-1.jpg');
+            }
+            .img2{
+                background-image: url('../../../assets/handbook/155349-nha-khoa-quan-1-tot.jpg');
+            }
+            .img3{
+                background-image: url('../../../assets/handbook/164122-nieng-rang-trong-suot-quy-trinh-nieng.jpg');
+            }
+            .img4{
+                background-image: url('../../../assets/handbook/180339-nho-rang-khon-bao-nhieu-tien.jpg');
+            }
+    
+            h3{
+                padding-left: 15px;
+                padding-right: 10px;
+            }
+        }
+        
+    }
+    
+}

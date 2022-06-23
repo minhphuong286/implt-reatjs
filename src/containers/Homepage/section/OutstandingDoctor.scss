@@ -1,0 +1,53 @@
+@import 'sectionShare';
+
+.outstanding-doctor {
+    height: 420px !important;
+    
+
+    .section-share-content{
+        text-align: center;
+        .cell {
+            border: 2px solid rgb(201, 197, 197);
+            margin: 0 5px;
+            padding: 10px 0;
+        }
+        .img{
+            
+            height: 150px;     
+            width: 150px;  
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+
+        .img1{
+            background-image: url('../../../assets/outstandingDoctor/090559-pgs-nguyen-thi-hoai-an.jpg');
+        }
+        .img2{
+            background-image: url('../../../assets/outstandingDoctor/105401-bsckii-tran-minh-khuyen.jpg');
+        }
+        .img3{
+            background-image: url('../../../assets/medicalFacility/095412-bv-hung-viet.jpg');
+        }
+        .img4{
+            background-image: url('../../../assets/outstandingDoctor/114430-bshung.jpg');
+        }
+        .img5{
+            background-image: url('../../../assets/outstandingDoctor/115950bs-dao-dinh-thi.jpg');
+        }
+        .img6{
+            background-image: url('../../../assets/outstandingDoctor/142313-bs-tran-huu-binh.jpg');
+        }
+        .img7{
+            background-image: url('../../../assets/outstandingDoctor/155650-gs-ha-van-quyet.jpg');
+        }
+        .img8{
+            background-image: url('../../../assets/outstandingDoctor/160049-bs-hoai-huong.jpg');
+        }
+
+        h3{
+            font-size: 16px;
+        }
+    }
+}

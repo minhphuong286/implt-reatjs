@@ -1,0 +1,34 @@
+.homefooter{
+    background-color: #64b9e5;
+    padding: 25px 150px;
+    display: flex;
+    justify-content: space-between;
+    &-copyright{
+        color: white;
+        // width: fit-content;
+        // display: flex;
+    }
+
+    &-media{
+        display: flex;
+        .logo-media{
+            background-position: center !important;
+            background-size: cover !important;
+            height: 32px;
+            width: 32px;
+        }
+        .facebook{
+            margin-right: 10px;
+            div{
+                background-image: url('../../assets/footer/facebook-square.svg');
+                @extend .logo-media;
+            }
+        }
+        .youtube{
+            div{
+                background: url('../../assets/footer/youtube-square.svg');
+                @extend .logo-media;
+            }
+        }
+    }
+}

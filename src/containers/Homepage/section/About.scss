@@ -1,0 +1,44 @@
+@import 'sectionShare';
+
+.about{
+    height: 500px;
+    .section-share-content{
+        // border: 1px solid black;
+        height: 350px;
+        display: flex;
+
+        .about-others {
+            // display: flex;
+            // border: 1px solid red;
+            width: 515px;
+            height: 270px;
+            margin: auto auto;
+            padding: 0;
+            li{
+                padding: 5px;
+                list-style-type: none;
+                display: inline-block;
+            }
+            .logo-article{
+                width: 160px;
+                height: 50px;
+                background-repeat: no-repeat;
+            }
+            .logo1{
+                background-image: url(../../../assets/about/cuc-cong-nghe-thong-tin-bo-y-te-2.png);
+            }
+            .logo2{
+                background-image: url(../../../assets/about/ictnews.png);
+            }
+            .logo3{
+                background-image: url(../../../assets/about/suckhoedoisong.png);
+            }
+            .logo4{
+                background-image: url(../../../assets/about/vnexpress.png);
+            }
+            .logo5{
+                background-image: url(../../../assets/about/vtv1.png);
+            }
+        }
+    }
+}
