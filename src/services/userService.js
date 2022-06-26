@@ -21,8 +21,12 @@ const deleteUser = (userId) => {
 }
 
 const saveUser = (data) => {
-    console.log("data put on server: ", data)
+    // console.log("data put on server: ", data)
     return axios.put('/api/edit-user', data)
+}
+
+const getAllcodes = (inputType) => {
+    return axios.get(`/api/get-all-codes?type=${inputType}`)
 }
 
 export {
@@ -31,5 +35,6 @@ export {
     createUser,
     deleteUser,
     saveUser,
+    getAllcodes
 }
 // export default handleLogin;

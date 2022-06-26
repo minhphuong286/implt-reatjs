@@ -4,7 +4,7 @@ import { push } from "connected-react-router";
 
 import * as actions from "../../store/actions";
 import './Login.scss';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 import { handleLogin } from '../../services/userService';
 
 class Login extends Component {
@@ -96,13 +96,13 @@ class Login extends Component {
                                     value={this.state.password}
                                     onChange={(e) => { this.handleOnChangePassword(e) }}
                                 />
-                                <span 
+                                <span
                                     onClick={() => this.handleShowHidePassword()}
                                 ><i className={this.state.isShowPassword ? 'far fa-eye' : 'far fa-eye-slash'}></i></span>
                             </div>
-                               
+
                         </div>
-                        <div className='col-12' style={{color:'red'}}>
+                        <div className='col-12' style={{ color: 'red' }}>
                             {this.state.errMessage}
                         </div>
                         <div className='col-12 '>
@@ -119,7 +119,7 @@ class Login extends Component {
                         <div className='social-login'>
                             <i className="fab fa-brands fa-google-plus"></i>
                             <i className="fab fa-facebook"></i>
-                            
+
                         </div>
                     </div>
                 </div>

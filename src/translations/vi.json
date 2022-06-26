@@ -49,18 +49,43 @@
         "userpass-wrong": "Sai tên đăng nhập hoặc mật khẩu!"
     },
     "menu": {
-        "system": {
-            "header": "Hệ thống",
-            "system-administrator": {
-                "header": "Quản trị hệ thống",
-                "user-manage": "Quản lý người sử dụng",
-                "product-manage": "Quản lý gói",
-                "register-package-group-or-account": "Đăng ký gói dịch vụ cho nhóm/tài khoản"
-            },
-            "system-parameter": {
-                "header": "Tham số hệ thống"
-            }
+        "title": {
+            "welcome": "Xin chào",
+            "human-resource": "Quản trị nhân sự",
+            "clinic": "Quản trị phòng khám",
+            "specialty": "Quản trị chuyên khoa",
+            "handbook": "Quản trị cẩm nang"
+        },
+        "admin-hr": {
+            "crud": "CRUD người dùng",
+            "crud-redux": "CRUD redux",
+            "manage-user": "Quản lý người dùng",
+            "manage-admin": "Quản lý admin",
+            "manage-doctor": "Quản lý bác sĩ",
+            "manage-patient": "Quản lý bệnh nhân"
+        },
+        "admin-clinic": {
+            "crud": "CRUD phòng khám"
+        },
+        "admin-specialty": {
+            "crud": "CRUD chuyên khoa"
+        },
+        "admin-handbook": {
+            "crud": "CRUD cẩm nang"
         }
+    },
+    "manage-user": {
+        "email": "Email",
+        "password": "Mật khẩu",
+        "firstname": "Tên",
+        "lastname": "Họ",
+        "phone": "Số điện thoại",
+        "address": "Địa chỉ",
+        "gender": "Giới tính",
+        "position": "Chức vụ",
+        "role": "Vai trò",
+        "avatar": "Ảnh đại diện",
+        "save": "Lưu"
     },
     "system": {
         "user-manage": {

@@ -48,10 +48,10 @@ class Menu extends Component {
                         </div>
                     </Fragment>
                 ) : (
-                        <Link to={link} className="menu-link" onClick={onLinkClick}>
-                            <FormattedMessage id={name} />
-                        </Link>
-                    )}
+                    <Link to={link} className="menu-link" onClick={onLinkClick}>
+                        <FormattedMessage id={name} />
+                    </Link>
+                )}
             </li>
         );
     }
@@ -121,6 +121,7 @@ class Navigator extends Component {
             const currentPath = location.pathname;
             for (let i = 0; i < subMenus.length; i++) {
                 const subMenu = subMenus[i];
+                console.log('>>>>>>>>>>check: ')
                 if (subMenu.link === currentPath) {
                     return true;
                 }

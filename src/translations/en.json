@@ -49,18 +49,44 @@
         "userpass-wrong": "Invalid username or password!"
     },
     "menu": {
-        "system": {
-            "header": "System",
-            "system-administrator": {
-                "header": "System Administrator",
-                "user-manage": "User manage",
-                "product-manage": "Package manage",
-                "register-package-group-or-account": "Register service package for group/account"
-            },
-            "system-parameter": {
-                "header": "System-parameter"
-            }
+        "title": {
+            "welcome": "Welcome",
+            "human-resource": "Manage human resource",
+            "clinic": "Manage clinic",
+            "specialty": "Manage Specialty",
+            "handbook": "Manage Handbook",
+            "article": "Manage article"
+        },
+        "admin-hr": {
+            "crud": "CRUD user",
+            "crud-redux": "CRUD redux",
+            "manage-user": "Manage user",
+            "manage-admin": "Manage admin",
+            "manage-doctor": "Manage doctor",
+            "manage-patient": "Manage patient"
+        },
+        "admin-clinic": {
+            "crud": "CRUD clinic"
+        },
+        "admin-specialty": {
+            "crud": "CRUD specialty"
+        },
+        "admin-handbook": {
+            "crud": "CRUD handbook"
         }
+    },
+    "manage-user": {
+        "email": "Email",
+        "password": "Password",
+        "firstname": "Firstname",
+        "lastname": "Lastname",
+        "phone": "Phone",
+        "address": "Address",
+        "gender": "Gender",
+        "position": "Position",
+        "role": "Role",
+        "avatar": "Avatar",
+        "save": "Save"
     },
     "system": {
         "user-manage": {

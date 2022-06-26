@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 
 import './HomeFooter.scss';
-import { LANGUAGES } from '../../utils';
+// import { LANGUAGES } from '../../utils';
 import { changeLanguageApp } from '../../store/actions/appActions';
 class HomeFooter extends Component {
 
