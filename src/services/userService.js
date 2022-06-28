@@ -29,12 +29,15 @@ const getAllcodes = (inputType) => {
     return axios.get(`/api/get-all-codes?type=${inputType}`)
 }
 
+const getTopDoctorHomeService = (limit) => {
+    return axios.get(`/api/top-doctor-home?limit=${limit}`)
+}
 export {
     handleLogin,
     getAllUsers,
     createUser,
     deleteUser,
     saveUser,
-    getAllcodes
+    getAllcodes,
+    getTopDoctorHomeService
 }
-// export default handleLogin;

@@ -2,7 +2,35 @@
     margin-top: 15px;
 }
 .btn-save{
-    padding: 0 5px;
+    padding: 0 10px;
     margin-top: 15px;
-    width: 45px;
+    width: fit-content;
+}
+.isLoading{
+    text-align: center;
+    font-weight: bold;
+}
+.avatar{
+    display: flex;
+    .choose{
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 6px;
+        background-color: #dfdfdf;
+        height: 20%;
+        margin: 0 10px;
+        margin-top: 20px;
+        &:hover{
+            background-color: #c8c5c5;
+        }
+    }
+    .preview{
+        border: 1px solid black;
+        width: 56%;
+        height: 139px;
+        margin-top: 10px;
+        background: center center no-repeat;
+        background-size: contain;
+        cursor: pointer;
+    }
 }

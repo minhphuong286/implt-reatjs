@@ -1,17 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
-
 import './OutstandingDoctor.scss';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import * as actions from '../../../store/actions';
+import { LANGUAGES } from '../../../utils';
 
 class OutstandingDoctor extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            arrDoctors: []
+        }
+    }
 
-
-
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.topDoctorsRedux !== this.props.topDoctorsRedux) {
+            this.setState({
+                arrDoctors: this.props.topDoctorsRedux
+            })
+        }
+    }
+    componentDidMount() {
+        this.props.loadTopDoctors();
+    }
     render() {
+        let { arrDoctors } = this.state;
+        let { language } = this.props;
 
         let settings = {
             dots: false,
@@ -29,102 +46,33 @@ class OutstandingDoctor extends Component {
                     </div>
                     <div className='section-share-content'>
                         <Slider {...settings}>
-                            <div>
-                                <div className='cell'>
-                                    <a href='#'>
-                                        <div className='img img1'></div>
-                                        <h3>
-                                            Bác sĩ Chuyên khoa II <br />
-                                            Trần Minh Khuyên
-                                        </h3>
-                                    </a>
-                                    <span className='faculty'>Sức khỏe tâm thần</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div className='cell'>
-                                    <a href='#'>
-                                        <div className='img img2'></div>
-                                        <h3>
-                                            Bác sĩ Chuyên khoa II <br />
-                                            Trần Thị Hoài Hương
-                                        </h3>
-                                    </a>
-                                    <span className='faculty'>Da liễu</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div className='cell'>
-                                    <a href='#'>
-                                        <div className='img img3'></div>
-                                        <h3>
-                                            Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp <br />
-                                            Nguyễn Duy Hưng
-                                        </h3>
-                                    </a>
-                                    <span className='faculty'>Da liễu</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div className='cell'>
-                                    <a href='#'>
-                                        <div className='img img4'></div>
-                                        <h3>
-                                            Tiến sĩ, Bác sĩ  <br />
-                                            Đào Đình Thi
-                                        </h3>
-                                    </a>
-                                    <span className='faculty'>Tai mũi họng</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div className='cell'>
-                                    <a href='#'>
-                                        <div className='img img5'></div>
-                                        <h3>
-                                            Trưởng khoa, Phó khoa Thần kinh I <br />
-                                            Tạ Đình Quang
-                                        </h3>
-                                    </a>
-                                    <span className='faculty'>Thần kinh</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div className='cell'>
-                                    <a href='#'>
-                                        <div className='img img6'></div>
-                                        <h3>
-                                            Giáo sư, Tiến sĩ  <br />
-                                            Hà Văn Quyết
-                                        </h3>
-                                    </a>
-                                    <span className='faculty'>Tiêu hóa - Bệnh viêm gan</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div className='cell'>
-                                    <a href='#'>
-                                        <div className='img img7'></div>
-                                        <h3>
-                                            Phó Giáo sư, Tiến sĩ, Bác sĩ  <br />
-                                            Nguyễn Thị Hoài An
-                                        </h3>
-                                    </a>
-                                    <span className='faculty'>Tai mũi họng - Nhi khoa</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div className='cell'>
-                                    <a href='#'>
-                                        <div className='img img8'></div>
-                                        <h3>
-                                            PGS, TS, Giảng viên cao cấp  <br />
-                                            Trần Hữu Bình
-                                        </h3>
-                                    </a>
-                                    <span className='faculty'>Sức khỏe tâm thần</span>
-                                </div>
-                            </div>
+                            {arrDoctors && arrDoctors.length > 0 &&
+                                arrDoctors.map((item, index) => {
+                                    let imageBase64 = '';
+                                    if (item.image) {
+                                        imageBase64 = new Buffer(item.image, 'base64').toString('binary')
+                                    }
+                                    let nameVi = `${item.positionData.nameVi},${item.lastName} ${item.firstName}`;
+                                    let nameEn = `${item.positionData.nameEn},${item.firstName} ${item.lastName}`;
+                                    return (
+                                        <div key={index}>
+                                            <div className='cell'>
+                                                <a href='#'>
+                                                    <div className='img img1'
+                                                        style={{ backgroundImage: `url(${imageBase64})` }}
+                                                    ></div>
+                                                    <h3>
+                                                        Bác sĩ Chuyên khoa II <br />
+                                                        {language === LANGUAGES.VI ? nameVi : nameEn}
+                                                    </h3>
+                                                </a>
+                                                <span className='faculty'>Sức khỏe tâm thần</span>
+                                            </div>
+                                        </div>
+                                    )
+
+                                })
+                            }
                         </Slider>
                     </div>
                 </div>
@@ -138,12 +86,14 @@ class OutstandingDoctor extends Component {
 const mapStateToProps = state => {
     return {
         isLoggedIn: state.user.isLoggedIn,
+        language: state.app.language,
+        topDoctorsRedux: state.admin.topDoctors
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        loadTopDoctors: () => dispatch(actions.fetchTopDoctor())
     };
 };
 
