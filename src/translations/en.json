@@ -22,6 +22,26 @@
         "remote": "Remote",
         "general": "General"
     },
+    "specialty": {
+        "section-title": "Popular specialties"
+    },
+    "medicalfacility": {
+        "section-title": "Outstanding medical facility"
+    },
+    "outstandingdoctor": {
+        "section-title": "Last week's featured doctor"
+    },
+    "handbook": {
+        "section-title": "Handbook"
+    },
+    "about": {
+        "section-title": "Media talk about BookingCare"
+    },
+    "section-share": {
+        "seemore": "See more",
+        "search": "Search",
+        "allposts": "All posts"
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",

@@ -45,7 +45,9 @@
         .slick-arrow{
             z-index: 999 !important;
         }
-
+        .slick-disabled{
+            display: none !important;
+        }
         a{
             text-decoration: none;
             color: grey;

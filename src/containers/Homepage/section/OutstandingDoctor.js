@@ -32,7 +32,7 @@ class OutstandingDoctor extends Component {
 
         let settings = {
             dots: false,
-            infinite: true,
+            infinite: false,
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 4,
@@ -41,8 +41,8 @@ class OutstandingDoctor extends Component {
             <>
                 <div className='section-share outstanding-doctor'>
                     <div className='section-share-title'>
-                        <h2>Bác sĩ nổi bật tuần qua</h2>
-                        <a href='#' >Tìm kiếm</a>
+                        <h2><FormattedMessage id={"outstandingdoctor.section-title"} /></h2>
+                        <a href='#' ><FormattedMessage id={"section-share.search"} /></a>
                     </div>
                     <div className='section-share-content'>
                         <Slider {...settings}>
@@ -52,8 +52,8 @@ class OutstandingDoctor extends Component {
                                     if (item.image) {
                                         imageBase64 = new Buffer(item.image, 'base64').toString('binary')
                                     }
-                                    let nameVi = `${item.positionData.nameVi},${item.lastName} ${item.firstName}`;
-                                    let nameEn = `${item.positionData.nameEn},${item.firstName} ${item.lastName}`;
+                                    let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
+                                    let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName}`;
                                     return (
                                         <div key={index}>
                                             <div className='cell'>

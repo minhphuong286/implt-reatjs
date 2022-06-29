@@ -15,7 +15,7 @@ class Specialty extends Component {
 
         let settings = {
             dots: false,
-            infinite: true,
+            infinite: false,
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 4,
@@ -24,8 +24,8 @@ class Specialty extends Component {
             <>
                 <div className='section-share specialty'>
                     <div className='section-share-title'>
-                        <h2>Chuyên khoa phổ biến</h2>
-                        <a href='#' >Xem thêm</a>
+                        <h2><FormattedMessage id={"specialty.section-title"} /></h2>
+                        <a href='#' ><FormattedMessage id={"section-share.seemore"} /></a>
                     </div>
                     <div className='section-share-content'>
                         <Slider {...settings}>

@@ -15,7 +15,7 @@ class MedicalFacility extends Component {
 
         let settings = {
             dots: false,
-            infinite: true,
+            infinite: false,
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 4,
@@ -24,8 +24,8 @@ class MedicalFacility extends Component {
             <>
                 <div className='section-share medical-facility'>
                     <div className='section-share-title'>
-                        <h2>Cơ sở y tế nổi bật</h2>
-                        <a href='#' >Tìm kiếm</a>
+                        <h2><FormattedMessage id={"medicalfacility.section-title"} /></h2>
+                        <a href='#' ><FormattedMessage id={"section-share.search"} /></a>
                     </div>
                     <div className='section-share-content'>
                         <Slider {...settings}>

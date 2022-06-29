@@ -70,12 +70,12 @@
                         }
                     }
                 }
-                &.active span {
-                    font-weight: 500;
-                    color: $colormain;
-                }
+                // &.active span {
+                //     font-weight: 500;
+                //     color: $colormain;
+                // }
                 &.active{
-                    background-color: #3ab889;
+                    background-color: #3ab889 !important;
                 }
                 &:hover {
                     background-color: #3ab889;

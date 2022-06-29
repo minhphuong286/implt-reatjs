@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import './About.scss';
 
@@ -13,7 +13,7 @@ class About extends Component {
             <>
                 <div className='section-share about'>
                     <div className='section-share-title'>
-                        <h2>Truyền thông nói về BookingCare</h2>
+                        <h2><FormattedMessage id={"about.section-title"} /></h2>
                     </div>
                     <div className='section-share-content'>
                         <iframe width="50%" height="100%"

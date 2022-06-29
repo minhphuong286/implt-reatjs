@@ -22,6 +22,26 @@
         "remote": "Từ xa",
         "general": "Tổng quát"
     },
+    "specialty": {
+        "section-title": "Chuyên khoa phổ biến"
+    },
+    "medicalfacility": {
+        "section-title": "Cơ sở y tế nổi bật"
+    },
+    "outstandingdoctor": {
+        "section-title": "Bác sĩ nổi bật tuần qua"
+    },
+    "handbook": {
+        "section-title": "Cẩm nang"
+    },
+    "about": {
+        "section-title": "Truyền thông nói về BookingCare"
+    },
+    "section-share": {
+        "seemore": "Xem thêm",
+        "search": "Tìm kiếm",
+        "allposts": "Tất cả bài viết"
+    },
     "common": {
         "add": "Thêm",
         "edit": "Sửa",

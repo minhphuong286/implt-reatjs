@@ -16,7 +16,7 @@ export const adminMenu = [
                 // ]
             },
             {
-                name: 'menu.admin-hr.manage-doctor', link: '/system/user-doctor'
+                name: 'menu.admin-hr.manage-doctor', link: '/system/manage-doctor'
             },
         ]
     },

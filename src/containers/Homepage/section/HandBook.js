@@ -15,7 +15,7 @@ class HandBook extends Component {
 
         let settings = {
             dots: false,
-            infinite: true,
+            infinite: false,
             speed: 500,
             slidesToShow: 2,
             slidesToScroll: 2,
@@ -24,8 +24,8 @@ class HandBook extends Component {
             <>
                 <div className='section-share handbook'>
                     <div className='section-share-title'>
-                        <h2>Cẩm nang</h2>
-                        <a href='#' >Tất cả bài viết</a>
+                        <h2><FormattedMessage id={"handbook.section-title"} /></h2>
+                        <a href='#' ><FormattedMessage id={"section-share.allposts"} /></a>
                     </div>
                     <div className='section-share-content'>
                         <Slider {...settings}>
