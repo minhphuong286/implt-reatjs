@@ -28,7 +28,7 @@ class Login extends Component {
             password: e.target.value
         })
     }
-    handleLogin = async () => {
+    handleClickLogin = async () => {
         console.log('show state: ', this.state)
         this.setState({
             errMessage: ''
@@ -107,7 +107,7 @@ class Login extends Component {
                         </div>
                         <div className='col-12 '>
                             <button className='btn-login'
-                                onClick={() => this.handleLogin()}
+                                onClick={() => this.handleClickLogin()}
                             >Login</button>
                         </div>
                         <div className='col-12'>

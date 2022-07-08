@@ -69,12 +69,14 @@
         "userpass-wrong": "Invalid username or password!"
     },
     "menu": {
-        "title": {
-            "welcome": "Welcome",
+        "common": {
+            "welcome": "Welcome"
+        },
+        "admin-title": {
             "human-resource": "Manage human resource",
             "clinic": "Manage clinic",
-            "specialty": "Manage Specialty",
-            "handbook": "Manage Handbook",
+            "specialty": "Manage specialty",
+            "handbook": "Manage handbook",
             "article": "Manage article"
         },
         "admin-hr": {
@@ -83,7 +85,8 @@
             "manage-user": "Manage user",
             "manage-admin": "Manage admin",
             "manage-doctor": "Manage doctor",
-            "manage-patient": "Manage patient"
+            "manage-patient": "Manage patient",
+            "manage-schedule-doctor": "Manage schedule"
         },
         "admin-clinic": {
             "crud": "CRUD clinic"
@@ -93,6 +96,12 @@
         },
         "admin-handbook": {
             "crud": "CRUD handbook"
+        },
+        "doctor-title": {
+            "schedule": "Manage schedule"
+        },
+        "doctor-schedule": {
+            "manage-schedule": "Manage schedule"
         }
     },
     "manage-user": {

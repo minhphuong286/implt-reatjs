@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import * as actions from '../../../store/actions';
 import { LANGUAGES } from '../../../utils';
+import { withRouter } from 'react-router';
 
 class OutstandingDoctor extends Component {
     constructor(props) {
@@ -26,6 +27,9 @@ class OutstandingDoctor extends Component {
     componentDidMount() {
         this.props.loadTopDoctors();
     }
+    handleViewDetailDoctor = (doctor) => {
+        this.props.history.push(`/detail-doctor/${doctor.id}`)
+    }
     render() {
         let { arrDoctors } = this.state;
         let { language } = this.props;
@@ -37,6 +41,7 @@ class OutstandingDoctor extends Component {
             slidesToShow: 4,
             slidesToScroll: 4,
         }
+
         return (
             <>
                 <div className='section-share outstanding-doctor'>
@@ -56,8 +61,8 @@ class OutstandingDoctor extends Component {
                                     let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName}`;
                                     return (
                                         <div key={index}>
-                                            <div className='cell'>
-                                                <a href='#'>
+                                            <div className='cell' onClick={() => this.handleViewDetailDoctor(item)}>
+                                                <a href=''>
                                                     <div className='img img1'
                                                         style={{ backgroundImage: `url(${imageBase64})` }}
                                                     ></div>
@@ -97,4 +102,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OutstandingDoctor);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OutstandingDoctor));

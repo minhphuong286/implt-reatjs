@@ -1,29 +1,40 @@
-.manage-doctor-container{
+.manage-doctor-container {
     padding: 5px;
 
-    .save-content-doctor{
-        margin-top: 20px;
-        margin-bottom: 30px;
-        border-radius: 3px;
-        outline: none;
-        border: none;
-        padding: 5px;
-        background: rgb(248, 173, 32);
-        cursor: pointer;
-        &:hover{
-            background: rgb(224, 146, 3);
+    @mixin button-content-doctor($bgColor, $bgColorHover) {
+        margin-top      : 20px;
+        margin-bottom   : 30px;
+        border-radius   : 3px;
+        outline         : none;
+        border          : none;
+        padding         : 5px;
+        background-color: $bgColor;
+        cursor          : pointer;
+
+        &:hover {
+            background-color: $bgColorHover;
         }
     }
 
-    .more-infor{
-        display: flex;
-        gap: 15px;
+    .save-content-doctor {
+        @include button-content-doctor(rgb(248, 173, 32), rgb(224, 146, 3));
+    }
+
+    .create-content-doctor {
+        @include button-content-doctor(#3eb3c5, #1691a4);
+    }
+
+    .more-infor {
+        display       : flex;
+        gap           : 15px;
         padding-bottom: 15px;
-        .content-left{
+
+        .content-left {
             width: 40%;
         }
-        .content-right{
+
+        .content-right {
             width: 60%;
-        } 
+        }
     }
 }

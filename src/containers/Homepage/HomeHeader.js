@@ -3,14 +3,21 @@ import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 
 import './HomeHeader.scss';
+// import './test/test.scss';
 import { LANGUAGES } from '../../utils';
 import { changeLanguageApp } from '../../store/actions/appActions';
+import { withRouter } from 'react-router-dom';
 class HomeHeader extends Component {
 
     handleChangeLangs = (lang) => {
         this.props.changeLanguageAppRedux(lang)
     }
 
+    handleGoToHome = () => {
+        if (this.props.history) {
+            this.props.history.push('/home')
+        }
+    }
     render() {
         let langRedux = this.props.lang;
         console.log('check lang: ', langRedux)
@@ -20,7 +27,7 @@ class HomeHeader extends Component {
                     <div className='home-header-content'>
                         <div className='left-content'>
                             <i className='fas fa-bars'></i>
-                            <div className='lt-logo'></div>
+                            <div className='lc-logo' onClick={() => this.handleGoToHome()}></div>
                         </div>
                         <div className='center-content'>
                             <div className='cc-child'>
@@ -55,79 +62,81 @@ class HomeHeader extends Component {
                         </div>
                     </div>
                 </header>
-                <div className='after-home-header'>
-                    <div className='after-home-header-up'>
-                        <div className='ahhu-title'>
-                            <h1><FormattedMessage id={"homeheader.medical-platform"} /></h1>
-                            <b><FormattedMessage id={"homeheader.comprehensive-health-care"} /></b>
-                        </div>
-                        <div className='ahhu-search'>
-                            <i className='fa fa-search'></i>
-                            <input type='text'
-                                placeholder='Tìm kiếm'>
+                {this.props.isShowBanner === true &&
+                    <div className='after-home-header'>
+                        <div className='after-home-header-up'>
+                            <div className='ahhu-title'>
+                                <h1><FormattedMessage id={"homeheader.medical-platform"} /></h1>
+                                <b><FormattedMessage id={"homeheader.comprehensive-health-care"} /></b>
+                            </div>
+                            <div className='ahhu-search'>
+                                <i className='fa fa-search'></i>
+                                <input type='text'
+                                    placeholder='Tìm kiếm'>
 
-                            </input>
+                                </input>
+                            </div>
+                        </div>
+                        <div className='after-home-header-down'>
+                            <ul>
+                                <li>
+                                    <a href='#' className='ahhd-child'>
+                                        <i className='far fa-hospital'></i><br></br>
+                                        <div className='sub'>
+                                            <FormattedMessage id={"homeheader.examination"} /> <br></br>
+                                            <FormattedMessage id={"homeheader.specialty"} />
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#' className='ahhd-child'>
+                                        <i className='fas fa-mobile-alt'></i><br></br>
+                                        <div className='sub'>
+                                            <FormattedMessage id={"homeheader.examination"} /> <br></br>
+                                            <FormattedMessage id={"homeheader.remote"} />
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#' className='ahhd-child'>
+                                        <i className='fas fa-procedures'></i><br></br>
+                                        <div className='sub'>
+                                            <FormattedMessage id={"homeheader.examination"} /> <br></br>
+                                            <FormattedMessage id={"homeheader.general"} />
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#' className='ahhd-child'>
+                                        <i className='fa fa-medkit'></i><br></br>
+                                        <div className='sub'>
+                                            <FormattedMessage id={"homeheader.test"} /><br></br>
+                                            <FormattedMessage id={"homeheader.medical"} />
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#' className='ahhd-child'>
+                                        <i className='fa fa-ambulance'></i><br></br>
+                                        <div className='sub'>
+                                            <FormattedMessage id={"homeheader.product"} /><br></br>
+                                            <FormattedMessage id={"homeheader.medical2"} />
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#' className='ahhd-child'>
+                                        <i className="fa fa-street-view"></i><br></br>
+                                        <div className='sub'>
+                                            <FormattedMessage id={"homeheader.health"} /><br></br>
+                                            <FormattedMessage id={"homeheader.mental"} />
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div className='after-home-header-down'>
-                        <ul>
-                            <li>
-                                <a href='#' className='ahhd-child'>
-                                    <i className='far fa-hospital'></i><br></br>
-                                    <div className='sub'>
-                                        <FormattedMessage id={"homeheader.examination"} /> <br></br>
-                                        <FormattedMessage id={"homeheader.specialty"} />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href='#' className='ahhd-child'>
-                                    <i className='fas fa-mobile-alt'></i><br></br>
-                                    <div className='sub'>
-                                        <FormattedMessage id={"homeheader.examination"} /> <br></br>
-                                        <FormattedMessage id={"homeheader.remote"} />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href='#' className='ahhd-child'>
-                                    <i className='fas fa-procedures'></i><br></br>
-                                    <div className='sub'>
-                                        <FormattedMessage id={"homeheader.examination"} /> <br></br>
-                                        <FormattedMessage id={"homeheader.general"} />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href='#' className='ahhd-child'>
-                                    <i className='fa fa-medkit'></i><br></br>
-                                    <div className='sub'>
-                                        <FormattedMessage id={"homeheader.test"} /><br></br>
-                                        <FormattedMessage id={"homeheader.medical"} />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href='#' className='ahhd-child'>
-                                    <i className='fa fa-ambulance'></i><br></br>
-                                    <div className='sub'>
-                                        <FormattedMessage id={"homeheader.product"} /><br></br>
-                                        <FormattedMessage id={"homeheader.medical2"} />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href='#' className='ahhd-child'>
-                                    <i className="fa fa-street-view"></i><br></br>
-                                    <div className='sub'>
-                                        <FormattedMessage id={"homeheader.health"} /><br></br>
-                                        <FormattedMessage id={"homeheader.mental"} />
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                }
             </>
         )
     }
@@ -148,4 +157,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeHeader));

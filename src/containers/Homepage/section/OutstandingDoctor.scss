@@ -2,26 +2,29 @@
 
 .outstanding-doctor {
     height: 420px !important;
-    
 
-    .section-share-content{
+
+    .section-share-content {
         text-align: center;
+
         .cell {
-            border: 2px solid rgb(201, 197, 197);
-            margin: 0 5px;
+            border : 2px solid rgb(201, 197, 197);
+            margin : 0 5px;
             padding: 10px 0;
+            cursor : pointer;
         }
-        .img{
-            
-            height: 150px;     
-            width: 150px;  
-            background-size: cover;
+
+        .img {
+
+            height             : 150px;
+            width              : 150px;
+            background-size    : cover;
             background-position: center;
-            margin: 0 auto;
-            border-radius: 50%;
+            margin             : 0 auto;
+            border-radius      : 50%;
         }
-        
-        
+
+
         // .img1{
         //     background-image: url('../../../assets/outstandingDoctor/090559-pgs-nguyen-thi-hoai-an.jpg');
         // }
@@ -47,7 +50,7 @@
         //     background-image: url('../../../assets/outstandingDoctor/160049-bs-hoai-huong.jpg');
         // }
 
-        h3{
+        h3 {
             font-size: 16px;
         }
     }

@@ -1,64 +1,76 @@
 @import "../../styles/common.scss";
 
 .header-container {
-    z-index: 99;
-    display: flex;
-    justify-content: space-between;
+    z-index         : 99;
+    display         : flex;
+    justify-content : space-between;
     background-color: $colormain;
-    color: $common-text-color;
-    height: 40px;
-    position: relative;
-    &-right{
-        width: 20%;
-        display: flex;
+    color           : $common-text-color;
+    height          : 40px;
+    position        : relative;
+
+    &-right {
+        width          : 20%;
+        display        : flex;
         justify-content: space-around;
-        align-items: center;
-        .welcome{
-            margin-right: 10px
+        align-items    : center;
+
+        .welcome {
+            margin-right: 10px;
+            text-align  : center;
+            font-size   : 12px;
         }
-        .languages{
-            .langs-vi{
-                margin-left: 15px;
-                padding:5px;
-                border-radius: 50%;
+
+        .languages {
+            .langs-vi {
+                margin-left     : 15px;
+                padding         : 5px;
+                border-radius   : 50%;
                 background-color: rgb(220, 55, 55);
-                cursor: pointer;
-                opacity: 0.2;
-                &.active{
+                cursor          : pointer;
+                opacity         : 0.2;
+
+                &.active {
                     opacity: 1;
                 }
-                &:hover{
+
+                &:hover {
                     opacity: 0.8;
                 }
             }
-            .langs-en{
-                margin-left: 5px;
-                padding:5px;
-                border-radius: 50%;
+
+            .langs-en {
+                margin-left     : 5px;
+                padding         : 5px;
+                border-radius   : 50%;
                 background-color: #0dcaf0;
-                cursor: pointer;
-                opacity: 0.2;
-                &.active{
+                cursor          : pointer;
+                opacity         : 0.2;
+
+                &.active {
                     opacity: 1;
                 }
-                &:hover{
+
+                &:hover {
                     opacity: 0.8;
                 }
             }
         }
 
         .btn-logout {
-            color: $common-text-color;
+            color      : $common-text-color;
             line-height: 40px;
-            height: 40px;
-            padding: 0 10px;
+            height     : 40px;
+            padding    : 0 10px;
+
             &:hover {
                 background-color: darken($colormain, 5);
             }
+
             i {
                 font-size: $base-size + 1px;
             }
         }
     }
-    
+
 }

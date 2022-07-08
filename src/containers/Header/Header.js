@@ -3,11 +3,36 @@ import { connect } from 'react-redux';
 
 import * as actions from "../../store/actions";
 import Navigator from '../../components/Navigator';
-import { adminMenu } from './menuApp';
+import { adminMenu, doctorMenu } from './menuApp';
 import './Header.scss';
-import { LANGUAGES } from '../../utils';
+import { LANGUAGES, USER_ROLE } from '../../utils';
 import { FormattedMessage } from 'react-intl';
+import ld from 'lodash';
+
 class Header extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            menuApp: [],
+        }
+    }
+    componentDidMount() {
+        let { userInfo } = this.props;
+        let menu = [];
+        if (userInfo && !ld.isEmpty(userInfo)) {
+            let role = userInfo.roleId;
+            if (role === USER_ROLE.ADMIN) {
+                menu = adminMenu;
+            }
+            if (role === USER_ROLE.DOCTOR) {
+                menu = doctorMenu;
+            }
+        }
+        this.setState({
+            menuApp: menu
+        })
+    }
     handleChangeLangs = (lang) => {
         this.props.changeLanguageAppRedux(lang)
     }
@@ -18,16 +43,16 @@ class Header extends Component {
             <div className="header-container">
                 {/* thanh navigator */}
                 <div className="header-tabs-container">
-                    <Navigator menus={adminMenu} />
+                    <Navigator menus={this.state.menuApp} />
                 </div>
 
                 {/* nút logout */}
                 <div className='header-container-right'>
-                    <span className='welcome'>
-                        <FormattedMessage id={"menu.title.welcome"} />
+                    <div className='welcome'>
+                        <div><FormattedMessage id={"menu.common.welcome"} /></div>
                         &nbsp; {userInfo && userInfo.firstName ? userInfo.firstName : ''}
                         {userInfo && userInfo.lastName ? ' ' + userInfo.lastName : ''}
-                    </span>
+                    </div>
                     <div className='languages'>
                         <span className={lang === LANGUAGES.VI ? 'langs-vi active' : 'langs-vi'}
                             onClick={() => this.handleChangeLangs(LANGUAGES.VI)}
