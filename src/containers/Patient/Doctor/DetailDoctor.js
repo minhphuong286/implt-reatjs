@@ -10,6 +10,7 @@ class DetailDoctor extends Component {
         super(props);
         this.state = {
             detailDoctor: {}
+
         }
     }
 
@@ -44,6 +45,7 @@ class DetailDoctor extends Component {
                 <HomeHeader
                     isShowBanner={false}
                 />
+
                 <div className="doctor-detail">
                     <div className="doctor-detail__intro">
                         <div
